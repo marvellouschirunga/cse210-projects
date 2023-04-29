@@ -16,3 +16,17 @@ public class Resume
     }
 
 }
+
+public class Certificate
+{
+    public string _title = " ";
+    public string _certifyingBody = " ";
+    public int _Year = 2020;
+    public int _expYear = 2025;
+
+    public void DisplayCertificationDetails()
+    {
+        Console.WriteLine($"{_title} ({_certifyingBody}) {_Year}-{_expYear}");
+    }
+    
+} 

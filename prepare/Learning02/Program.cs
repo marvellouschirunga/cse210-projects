@@ -32,6 +32,12 @@ class Program
         myResume._jobs.Add(job3);
         myResume._jobs[0].DisplayJobDetails();
         myResume.DisplayResume();
+
+        Certificate myCertificate = new Certificate();
+        myCertificate._title = "Web and Computer Programming";
+        myCertificate._certifyingBody = "BYU-Idaho";
+        myCertificate._Year = 2020;
+        myCertificate._expYear = 2025;
     }
 
     
