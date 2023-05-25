@@ -1,5 +1,5 @@
-# cse210-ww-student-template
-Marvellous Humphery Chirunga
+# cse210-Marvellous-Chirunga
+cse210-Programming-with-classes
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
