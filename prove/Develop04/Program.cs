@@ -1,9 +1,45 @@
 using System;
+using static System.Console;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        Clear();
+        var choice = "";
+        while (choice != "4")
+        {
+            WriteLine("Menu options:");
+            WriteLine("  1.Start your breathing actvity");
+            WriteLine("  2.Start your reflecting activity");
+            WriteLine("  3.Start your listing activity");
+            WriteLine("  4.Quit your exercise ");
+            Write("Select a choice from the above menu: ");
+            choice = ReadLine();
+
+            if (choice == "1")
+            {
+                var _breathing = new Breathing();
+                _breathing.ShowBreathingActivity();
+            }
+
+            else if (choice == "2")
+            {
+                var _reflecting = new Reflecting();
+                _reflecting.ShowReflectingActivity();
+            }
+
+            else if (choice == "3")
+            {
+                var _listing = new Listing();
+              _listing.ShowListingActivity();
+            }
+
+            else
+            {
+                Clear();
+                return;
+            }
+        }   
     }
 }
