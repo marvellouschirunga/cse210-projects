@@ -14,7 +14,7 @@ public class Breathing : Activity
 
         base.SetName("Breathing Activity");
         base.SetDescription("This activity will help you ralax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
-        base.SetDuration("How long, in sceonds, would you like for your session? ");
+        base.SetDuration("How long, in seconds, would you like for your session? ");
         base.SetMessage1("Well done!!");
     }
 
