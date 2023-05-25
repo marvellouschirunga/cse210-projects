@@ -44,18 +44,18 @@ public class Listing : Activity
         string msg1 = base.GetMessage1();
 
         Clear();
-        WriteLine($"Welcome to the {actName}\n");
+        TypeLine($"Welcome to the {actName}\n");
         WriteLine($"{description}\n");
         Write($"{duration}");
         int seconds = int.Parse(ReadLine());
         // Read();
         Clear();
-        WriteLine("Get ready...");
+        TypeLine("Get ready...");
 
         this._spinner.GetSpinner();
         Write(" ");
 
-        WriteLine("\nList as many responses as you can to the following prompt:");
+        TypeLine("\nList as many responses as you can to the following prompt:");
         this.GetListingPrompt();
 
         DateTime startTime = DateTime.Now;
@@ -68,15 +68,21 @@ public class Listing : Activity
             ReadLine();
             countInput += 1;
         }
-        WriteLine($"\nYou have listed {countInput} items.");
+        TypeLine($"\nYou have listed {countInput} items.");
 
         WriteLine($"{msg1}");
         this._spinner.GetSpinner();
 
         base.SetMessage2($"\nYou have completed another {seconds} seconds of the {base.GetName()}");
         string msg2 = base.GetMessage2();
-        WriteLine($"{msg2}");
+        TypeLine($"{msg2}");
         this._spinner.GetSpinner();
         Clear();
+    }
+    static void TypeLine(string line) {
+        for (int i = 0; i < line.Length; i++) {
+            Console.Write(line[i]);
+            System.Threading.Thread.Sleep(60); // Sleep for 150 milliseconds
+        }
     }
 }

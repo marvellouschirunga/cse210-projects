@@ -9,37 +9,48 @@ class Program
         var choice = "";
         while (choice != "4")
         {
-            WriteLine("Menu options:");
-            WriteLine("  1.Start your breathing actvity");
-            WriteLine("  2.Start your reflecting activity");
-            WriteLine("  3.Start your listing activity");
-            WriteLine("  4.Quit your exercise ");
-            Write("Select a choice from the above menu: ");
+            // Type the menu options using the TypeLine() function.
+            TypeLine("Menu options:");
+            WriteLine();
+            WriteLine("  1.Start breathing actvity");
+            WriteLine("  2.Start reflecting activity");
+            WriteLine("  3.Start listing activity");
+            WriteLine("  4.Quit ");
+            WriteLine();
+
+            // Write a prompt for the user to enter their choice.
+            TypeLine("Select a choice from the above menu: ");
             choice = ReadLine();
 
-            if (choice == "1")
+            // Switch on the user's choice and execute the corresponding action.
+            switch (choice)
             {
+            case "1":
                 var _breathing = new Breathing();
                 _breathing.ShowBreathingActivity();
-            }
-
-            else if (choice == "2")
-            {
+                break;
+            case "2":
                 var _reflecting = new Reflecting();
                 _reflecting.ShowReflectingActivity();
-            }
-
-            else if (choice == "3")
-            {
+                break;
+            case "3":
                 var _listing = new Listing();
-              _listing.ShowListingActivity();
-            }
-
-            else
-            {
+                _listing.ShowListingActivity();
+                break;
+            case "4":
                 Clear();
                 return;
+            default:
+                WriteLine("Invalid choice.");
+                break;
             }
         }   
+    }
+
+    static void TypeLine(string line) {
+        for (int i = 0; i < line.Length; i++) {
+            Console.Write(line[i]);
+            System.Threading.Thread.Sleep(60); // Sleep for 150 milliseconds
+        }
     }
 }

@@ -34,6 +34,9 @@ public class Breathing : Activity
         WriteLine("");
     } 
 
+
+
+
     public void ShowBreathingActivity()
     {
         string actName = base.GetName();
@@ -42,12 +45,12 @@ public class Breathing : Activity
         string msg1 = base.GetMessage1();
     
         Clear();
-        WriteLine($"Welcome to the {actName}\n");
+        TypeLine($"Welcome to the {actName}\n");
         WriteLine($"{description}\n");
         Write(duration);
         int seconds = int.Parse(ReadLine());
         Clear();
-        WriteLine("Get ready...");
+        TypeLine("Get ready...");
 
         var _spinner = new Spinner();
         _spinner.GetSpinner();
@@ -73,8 +76,14 @@ public class Breathing : Activity
         
         base.SetMessage2($"\nYou have completed another {seconds} seconds of the {base.GetName()}");
         string msg2 = base.GetMessage2();
-        WriteLine($"{msg2}");
+        TypeLine($"{msg2}");
         _spinner.GetSpinner();
         Clear();
+    }
+    static void TypeLine(string line) {
+        for (int i = 0; i < line.Length; i++) {
+            Console.Write(line[i]);
+            System.Threading.Thread.Sleep(60); // Sleep for 150 milliseconds
+        }
     }
 }

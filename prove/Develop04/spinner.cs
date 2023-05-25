@@ -29,7 +29,7 @@ public class Spinner
         // Add some creativity to the spinner by drawing a circle around it.
         for (int i = 0; i < 360; i += 10)
         {
-            Write(" ");
+            Write("::::::");
             Thread.Sleep(50);
         }
 
